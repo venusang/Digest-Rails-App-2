@@ -1,0 +1,31 @@
+.book.book-closed{class: "book-section-#{book.name.split(':')[0].split(split_section_on)[1]}"}
+  .book-section.label.label-default= book.name.split(':')[0].split(split_section_on)[1]
+  .book-inner
+    .container-fluid
+      %img.book-image.img-responsive.pull-left{src: image_path("#{image_type}/#{book.name.split(':')[0].split(split_section_on)[1]}.png")}
+      .book-content
+        %h3.book-title= book.name.split(':')[1]
+        %p.book-description= book.short_desc
+        %a.book-link{href: book.pdf_url, target: '_blank', class: "external_link", title: book.name, link_type: "external-pdf"}
+          %small.text-small.text-caps
+            %i.fa.fa-file-o.fa-2x.pull-right
+            PDF View
+            %br
+            (#{book.document_size})
+        %a.book-link{href: book.flip_url, target: '_blank', class: "external_link", title: book.name, link_type: "external-flip_url" }
+          %small.text-small.text-caps
+            %i.fa.fa-book.fa-2x.pull-right
+            Flip Book
+  
+    - if current::RelatedContent.all(:parent_id => book.id).count > 0
+      .book-related
+        -# double the padding with two containers
+        .container-fluid
+          .container-fluid
+            %h4.book-related-title Related Content
+            %ul.book-related-list.list-unstyled
+              - current::RelatedContent.all(:parent_id => book.id).each do |related|
+                %li
+                  %a.result_link{href: '#', data: {toggle: 'modal', target: "#book-#{book.id}-related-#{related.id}"}}
+                    = related.title
+                    %span  (Document Number&nbsp;#{related.document_number})

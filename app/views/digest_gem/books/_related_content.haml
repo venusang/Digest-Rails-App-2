@@ -1,0 +1,27 @@
+- current::RelatedContent.all(:parent_id => book.id).each do |related|
+  .modal.fade{id: "book-#{book.id}-related-#{related.id}", role: 'dialog'}
+    .modal-dialog
+      .modal-content
+        .modal-header
+          %button.close{data: {dismiss: 'modal', type: 'button'}} x
+          %h4.modal-title.doc_title= related.title
+        .modal-body
+          -if related.short_desc.nil?
+            %p Description currently unavailable
+          -else
+            %p= related.short_desc
+        .modal-footer
+          %p.pull-left
+            - if related.published_on
+              .doc_date
+                Document Date:
+                %span.info_txt= related.published_on.strftime("%B %e, %Y")
+            - if related.document_type
+              .doc_type
+                Document Type:
+                %span.info_txt= related.document_type
+            - if related.document_size
+              .doc_size
+                Document Size:
+                %span.info_txt= related.document_size
+          = link_to 'Preview', related.url, target: '_blank', class: 'btn btn-primary', id: "pmodal", title: related.title, link_type: "books_pdf", url: related.url

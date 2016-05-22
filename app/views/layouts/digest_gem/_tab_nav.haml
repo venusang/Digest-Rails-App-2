@@ -1,0 +1,51 @@
+- content_for :nav do
+  %nav.navbar.navbar-default.hidden-sm.hidden-md.hidden-lg
+    .container-fluid
+      .navbar-header
+        %button.navbar-toggle{data: {toggle: 'collapse', target: '.navbar-collapse'}}
+          %span.sr-only Toggle navigation
+          %span.icon-bar
+          %span.icon-bar
+          %span.icon-bar
+        %span.navbar-brand
+          %img.img-responsive.pull-left{src: image_path('logo.png')}
+          - if !active.nil? and active != ''
+            = active.humanize
+  
+      .collapse.navbar-collapse
+        %ul.nav.navbar-nav
+          %li{class: active == 'main_digest' ? 'active' : ''}
+            = link_to root_path do
+              Main Digest
+          %li{class: active == 'supplemental_digest' ? 'active' : ''}
+            = link_to supplemental_digest_index_path do
+              Supplementary Digest
+          %li{class: active == 'additional_product_info' ? 'active' : ''}
+            = link_to additional_product_infos_path do
+              Additional Product Info
+          %li{class: active == 'tools' ? 'active' : ''}
+            = link_to tools_path do
+              Tools
+
+  %nav.navbar.navbar-default.navbar-tab-nav.hidden-xs
+    / tabs
+    / specific tab class names are for IE8 only
+    %ul.nav.navbar-nav.nav-tabs
+      %li.nav-main_digest{class: active == 'main_digest' ? 'active' : ''}
+        = link_to root_path do
+          %img{src: image_path('digest-icon-white-book.png')}
+          Main Digest
+      %li.nav-supplemental_digest{class: active == 'supplemental_digest' ? 'active' : ''}
+        = link_to supplemental_digest_index_path do
+          %img{src: image_path('digest-icon-white-book.png')}
+          Supplementary Digest
+      %li.nav-additional_product_info{class: active == 'additional_product_info' ? 'active' : ''}
+        = link_to additional_product_infos_path do
+          %img{src: image_path('digest-icon-white-book-open.png')}
+          Additional Product Info
+      %li.nav-tools{class: active == 'tools' ? 'active' : ''}
+        = link_to tools_path do
+          %img{src: image_path('digest-icon-white-tools.png')}
+          Tools
+  
+    .hidden-xs.hidden-sm.hidden-md= render partial: 'layouts/digest_gem/search_form'

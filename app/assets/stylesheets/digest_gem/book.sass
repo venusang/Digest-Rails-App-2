@@ -1,0 +1,101 @@
+.book
+  position: relative
+  margin-bottom: 5px
+  border: 4px solid transparent
+  border-top: 0
+  .book-inner
+    overflow: hidden
+    position: relative
+    border: 1px solid #EEE
+    border-top-width: 5px
+    +border-top-radius(20px)
+  .book-image
+    cursor: pointer
+    position: absolute
+    top: 0
+    left: 0
+    max-width: 75px
+  .book-section
+    cursor: pointer
+    position: absolute
+    top: 0
+    right: 0
+    z-index: 10
+    width: 2em
+    height: 2em
+    padding: 0
+    +border-radius(1em)
+    font-weight: bold
+    font-size: 14px
+    line-height: 2
+    text-align: center
+  .book-content
+    margin-left: 75px
+    a
+      &:hover
+        text-decoration: none
+    .book-title
+      +ellipsis(false)
+      cursor: pointer
+      height: 3.75em
+      margin: 0.5em 15px 0 0
+      font-weight: bold
+      font-size: 14px
+      line-height: 1.25
+    .book-description
+      +ellipsis(false)
+      height: 3.75em
+      margin-bottom: 0
+      font-size: 12px
+      line-height: 1.25
+    .book-link
+      float: left
+      width: 38%
+      max-width: 85px
+      margin-right: 10%
+      &:nth-last-child(1)
+        margin-right: 0
+  .book-related
+    margin-top: 10px
+    .book-related-title
+      font-size: 15px
+    .book-related-list
+      font-size: 12px
+      li
+        margin-bottom: 5px
+  
+  // expanded / collapsed styles
+  &.book-closed
+    .book-link, .book-related
+      position: absolute
+      left: -9999px
+  &.book-open
+    border: 0
+    .book-section
+      right: 4px
+    .book-inner
+      border-width: 5px
+    .book-description
+      display: none
+    .book-link, .book-related
+      position: static
+
+// seciton colors
+@mixin book-section-color($color, $sections)
+  @each $section in $sections
+    .book-section-#{$section}
+      .book-section
+        background-color: $color
+      .book-inner
+        border-top-color: $color
+      &.book-open
+        .book-inner
+          border-color: $color
+
++book-section-color($spruce-green,       1  8 15 22 29)
++book-section-color($medium-gray,        2  9 16 23)
++book-section-color($fuschia-red,        3 10 17 24)
++book-section-color($lady-fern-green,    4 11 18 25)
++book-section-color($sky-blue,           5 12 19 26)
++book-section-color($seedling-green,     6 13 20 27)
++book-section-color($honeysuckle-orange, 7 14 21 28)

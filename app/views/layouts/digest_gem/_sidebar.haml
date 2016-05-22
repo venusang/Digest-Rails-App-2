@@ -1,0 +1,64 @@
+.text-right
+  .row
+    .col-sm-4.col-xs-12.col-md-12
+      = image_tag 'iphone.png', class: 'iphone-app-example hidden-xs hidden-sm'
+  
+      %h4.text-muted Get the free mobile app
+      %a{href: 'https://itunes.apple.com/us/app/digestplus/id770932899?mt=8', target: '_blank'}
+        = image_tag 'iosapp.png'
+      %a{href: 'https://play.google.com/store/apps/details?id=com.anypresence.schneiderdigest', target: '_blank'}
+        = image_tag 'googleplay.png'
+    
+    .col-sm-4.col-xs-12.col-md-12
+      - if request.fullpath == "/employee/" || request.fullpath == "/employee/supplemental_digest"
+        %hr.hidden-xs.hidden-sm
+        = image_tag 'fulldigesgt.png', class: 'hidden-xs hidden-sm'
+
+        -if request.fullpath == "/employee/"
+          %h4.text-muted View the full Digest
+          = link_to image_tag('pdf-button-iphone-col.png'), full_digest.pdf_url, target: '_blank', class: 'digest_images'
+          = link_to image_tag('flip-iphone-col.png'), full_digest.flip_url, target: '_blank', class: 'digest_images'
+        -if request.fullpath == "/employee/supplemental_digest"
+          %h4.text-muted View the Supplemental Digest
+          = link_to image_tag('pdf-button-iphone-col.png'), supplemental_digest.pdf_url, target: '_blank', class: 'digest_images'
+          = link_to image_tag('flip-iphone-col.png'), supplemental_digest.flip_url, target: '_blank', class: 'digest_images'
+
+    .col-sm-4.col-xs-12.col-md-12
+      - if request.fullpath == "/employee/" || request.fullpath == "/employee/supplemental_digest"
+        %hr.hidden-xs.hidden-sm
+        %h4.text-muted Related Content
+        %ul.related-list.list-unstyled
+          -related_content = sd_related_content if request.fullpath == "/employee/supplemental_digest"
+          -related_content = fd_related_content if request.fullpath == "/employee/"
+          - related_content.each do |related|
+            %li
+              %a{href: "#", data: {toggle: "modal", target: "#related#{related.id}"}}
+                =related.title
+            .modal.fade{id: "related#{related.id}"}
+              .modal-dialog
+                .modal-content
+                  .modal-header
+                    %button.close{data: {dismiss: "modal", type: "button"}} x
+                    %h4.modal-title.doc_title= related.title
+                  .modal-body.doc_body
+                    -if related.short_desc.nil?
+                      %p.text-muted Description currently unavailable
+                    -else
+                      %p= related.short_desc
+                  .modal-footer
+                    - if related.published_on
+                      .doc_date
+                        Document Date:
+                        %span.info_txt= related.published_on.strftime("%B %e, %Y")
+                    - if related.document_type
+                      .doc_type
+                        Document Type:
+                        %span.info_txt= related.document_type
+                    - if related.document_size
+                      .doc_size
+                        Document Size:
+                        %span.info_txt= related.document_size
+                    -if request.fullpath == "/employee/"
+                      %a.btn.btn-primary{id: "pmodal", type: "button", url: related.url, title: related.title, link_type: 'full_related_content'} Preview
+                    -elsif request.fullpath == "/employee/supplemental_digest"
+                      %a.btn.btn-primary{id: "pmodal", type: "button", url: related.url, title: related.title, link_type: 'supplemental_related_content'} Preview

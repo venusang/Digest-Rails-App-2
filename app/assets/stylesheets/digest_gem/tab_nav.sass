@@ -1,0 +1,81 @@
+.navbar-tab-nav
+  $active-color: $spruce-green
+  min-height: 0
+  max-height: 40px
+  margin-bottom: 10px
+  border: 0
+  border-bottom: 8px solid $active-color
+  +border-radius(0)
+  background: #000
+  .navbar-collapse
+    padding: 0
+  .nav-tabs
+    position: relative
+    top: -10px
+    border: 0
+    background: none
+    > li
+      img
+        position: relative
+        top: -3px
+        max-width: 25px
+        margin-right: 5px
+      > a, &.active > a
+        &, &:hover, &:focus
+          position: relative
+          margin: 0
+          margin-right: -15px
+          padding: 12px 15px 6px 30px
+          border: 0
+          +border-top-radius(10px)
+          text-transform: uppercase
+          line-height: 1
+          color: #FFF
+          +box-shadow(rgba(0, 0, 0, 0.25) 3px -2px 5px)
+          background-color: $dark-gray
+      &:nth-child(0n+1)
+        &.active
+          margin-left: -10px !important
+        > a, &.active > a
+          &, &:hover, &:focus
+            padding-left: 20px
+            +border-top-left-radius(0)
+            z-index: 100
+      &:nth-child(0n+2)
+        > a, &.active > a
+          &, &:hover, &:focus
+            z-index: 90
+      &:nth-child(0n+3)
+        > a, &.active > a
+          &, &:hover, &:focus
+            z-index: 80
+      &:nth-child(0n+4)
+        > a, &.active > a
+          &, &:hover, &:focus
+            z-index: 70
+      &:nth-child(0n+5)
+        > a, &.active > a
+          &, &:hover, &:focus
+            z-index: 60
+      &.active > a
+        &, &:hover, &:focus
+          margin-left: 10px !important
+          padding-left: 15px !important
+          z-index: 200 !important
+          background-color: $active-color
+
+.navbar-form
+  margin: 4px 0 0 15px
+  padding: 0
+  .form-group
+    float: left
+    margin-right: 5px
+  .form-control
+    height: auto
+    padding: 1px 5px
+    +border-radius(2px)
+  .btn
+    padding: 0 5px
+    +border-radius(2px)
+    color: #DDD
+    background-color: $dark-gray

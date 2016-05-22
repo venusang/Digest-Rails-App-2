@@ -1,0 +1,5 @@
+
+= render partial: 'layouts/digest_gem/tab_nav', locals: {active: 'tools'}
+
+= link_to @tools.first.title, @tools.first.large_url, target: "_blank", class: "external_link", title: @tools.first.title, link_type: "external-html"
+

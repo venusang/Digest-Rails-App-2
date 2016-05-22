@@ -1,0 +1,246 @@
+$schemeBlue: #015289
+$schemeAltBlue: #005a97
+$schemeGreen: #0f9647 
+
+// bootstrap variables
+//colors
+$textColor: #252525
+// fonts
+$sansFontFamily: Arial
+$baseFontSize: 15px
+$baseLineHeight: 23px
+// button
+$btnPrimaryBackground: lighten($schemeGreen, 2%)
+$btnPrimaryBackgroundHighlight: darken($schemeGreen, 10%)
+$btnSearchBackground: lighten($schemeBlue, 20%)
+$btnSearchBackgroundHighlight: $schemeBlue
+.page-top-pad
+  margin-top: 5px
+
+.navbar
+  border: none !important
+  margin-bottom: 0px !important
+  a
+    color: $schemeGreen !important
+    text-decoration: none
+.desktop-hide
+  display: none
+
+.navbar-nav
+  float: right
+  margin-top: 28px
+.container, .main-container
+  margin-left: auto
+  margin-right: auto
+  padding-left: 0px !important
+  padding-right: 0px !important
+
+.header-links
+  margin-top: -53px !important
+  li > a, li > a:hover
+    color: $schemeGreen !important
+.headerimage
+  border-top: 8px
+  margin-left: auto
+  margin-right: auto
+  border-top-color: #C5C5C5
+  border-top-style: solid
+  height: 249px
+  position: relative
+.dropdown-menu
+  display: none
+@media (max-width: 1200px)
+  .headerimage
+    border-top: 8px
+    margin-left: auto
+    margin-right: auto
+    border-top-color: #C5C5C5
+    border-top-style: solid
+    height: auto
+  #header-image
+    width: 970px
+    height: 184px
+
+@media (max-width: 992px)
+  .navbar-nav
+    float: left
+  .dropdown-menu
+    display: block
+  .main-links, #header-image
+    display: none
+@media (max-width: 768px)
+  .desktop-hide
+    display: block
+  .mobile-hide
+    display: none
+.search-bar
+  background-color: black
+  height: 39px
+  color: #f5f5f5
+  width: 479px
+  margin-left: -63px
+  padding-left: 8px
+  @media (max-width: 1200px)
+    width: 279px
+  @media (max-width: 992px)
+    margin-left: 0px
+.search-input
+  height: 30px !important
+  width: 95px !important
+  border-radius: 0px !important
+  margin-top: 7px
+  color: black
+.search-button
+  margin-left: 5px
+  height: 25px
+  padding-bottom: 3px
+  margin-bottom: 2px
+
+#search
+  margin-top: 3px
+  width: 165px
+  color: black
+  margin-left: 36px !important
+.brand
+  width: 210px
+
+.main-links
+  margin-top: -12px !important
+  cursor: pointer
+
+.tabs-wrapper
+  background: url('/assets/sprite-tabs.png') 0 0 no-repeat
+  overflow: hidden
+  position: absolute
+  bottom: -10px
+  width: 100%
+.tabs
+  padding: 5px
+  width: 747px
+  overflow: hidden
+  display: inline-block
+  margin: 0 10px 0 0
+
+ul.main-links li
+  text-transform: uppercase
+  float: left
+
+ul.main-links li a
+  padding: 0
+  display: inline-block
+  overflow: hidden
+  color: #fff
+  margin: 13px 20px 0 10px
+
+ul.main-links li a:hover
+  background: transparent
+  color: #fff
+ul.main-links li .icon
+  width: 30px
+  height: 30px
+  display: inline-block
+  background: url('/assets/sprite-nav.png') no-repeat
+
+ul.main-links li .text
+  display: inline-block
+  overflow: hidden
+
+a.main-digest .icon
+  background-position: 0 0
+
+a.additional-product-info .icon
+  background-position: -30px 0 !important
+
+a.tools .icon
+  background-position: -60px 0 !important
+
+ul.main-links li a:hover
+  cursor: pointer
+.main-content
+  border-top: 7px solid $schemeGreen
+  padding: 20px 0 0 0 !important
+
+
+
+.fake-container
+  border: 2px solid red
+  height: 50px
+
+.iphone-column
+  margin-top: -200px
+  text-align: center
+  border-bottom: solid
+  color: gray
+  border-bottom-color: #F1F1F1
+  @media (max-width: 1200px)
+    display: none
+.fd_rc_title
+  color: $schemeGreen
+  font-size: 13px
+  text-align: right
+.iphone-column-rc
+  text-align: right
+  color: gray
+
+
+.iphone-column-rc a
+  color: $schemeGreen
+
+.spacing
+  padding-bottom: 7px
+.random-line
+  border-bottom: 1px solid black
+
+.tab-container-main
+  overflow: hidden
+  font-size: 12px
+  height: 50px
+  float: left
+  width: 182px
+  z-index: 100
+  position: relative
+  margin-top: 1px
+.tab-container-supp
+  margin-left: -76px
+  font-size: 12px
+  height: 50px
+  width: 319px
+  overflow: hidden
+  float: left
+  position: relative
+  z-index: 99
+  margin-top: 1px
+.tab-container-add
+  overflow: hidden
+  font-size: 12px
+  height: 50px
+  float: left
+  width: 314px
+  margin-left: -76px
+  z-index: 98
+  position: relative
+  margin-top: 1px
+.tab-container-tool
+  overflow: hidden
+  font-size: 12px
+  position: relative
+  width: 186px
+  height: 50px
+  margin-left: -95px
+  z-index: 97
+  float: left
+  margin-top: 1px
+
+.cursor_point
+  cursor: pointer !important
+
+.removepadding
+  padding-left: 0px !important
+  padding-right: 0px !important
+
+.cross-bar
+  width: 600px
+
+.navbar-header
+  margin-top: -7px
+  padding-bottom: 34px

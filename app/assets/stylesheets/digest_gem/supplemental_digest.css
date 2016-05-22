@@ -1,0 +1,460 @@
+.supplemental-wrapper {
+  float: left;
+  position: relative;
+  /*
+    1,8, 15,22,29 - #009b3e
+    2,9,16,23 - #979fa4
+    3, 10, 17, 24 - #c40148
+    4, 11,18, 25- #59aa47
+    5,12,19,26 - #59aa47
+    6, 13,20,27 -#87d200
+    7,14,21,28 -#f7941e
+
+    */
+
+  /* 1, 8, 15, 22, 29  - #009b3e*/
+
+  /* 2,9,16,23 - #979fa4 */
+
+  /* 3, 10, 17, 24 - #c40148 */
+
+  /* 4, 11,18, 25- #59aa47 */
+
+  /*5,12,19,26 - #2fb4e9 */
+
+  /* 6, 13,20,27 -#87d200 */
+
+  /* 7,14,21,28 -#f7941e */
+
+}
+.supplemental-wrapper :hover {
+  cursor: pointer;
+}
+.supplemental-wrapper .panel-wrapper:hover {
+  cursor: pointer;
+}
+.supplemental-wrapper .circle {
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  z-index: 50;
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #fff;
+  line-height: 30px;
+  text-align: center;
+  font-weight: bold;
+  background: #ff0000;
+}
+.supplemental-wrapper .opened .circle {
+  right: -2px;
+  top: -2px;
+}
+.supplemental-wrapper #panel-1 .book-content .content-header a,
+.supplemental-wrapper #panel-8 .book-content .content-header a,
+.supplemental-wrapper #panel-15 .book-content .content-header a,
+.supplemental-wrapper #panel-22 .book-content .content-header a,
+.supplemental-wrapper #panel-29 .book-content .content-header a {
+  color: #009b3e;
+}
+.supplemental-wrapper .opened-panel-1,
+.supplemental-wrapper .opened-panel-8,
+.supplemental-wrapper .opened-panel-15,
+.supplemental-wrapper .opened-panel-22,
+.supplemental-wrapper .opened-panel-29 {
+  border: 3px solid #009b3e;
+}
+.supplemental-wrapper #panel-1 .title,
+.supplemental-wrapper #panel-8 .title,
+.supplemental-wrapper #panel-15 .title,
+.supplemental-wrapper #panel-22 .title,
+.supplemental-wrapper #panel-29 .title {
+  border-top: 5px solid #009b3e;
+}
+.supplemental-wrapper .opened-panel-1 .title,
+.supplemental-wrapper .opened-panel-8 .title,
+.supplemental-wrapper .opened-panel-15 .title,
+.supplemental-wrapper .opened-panel-22 .title,
+.supplemental-wrapper .opened-panel-29 .title {
+  border-top: none !important;
+}
+.supplemental-wrapper #panel-1 .circle,
+.supplemental-wrapper #panel-8 .circle,
+.supplemental-wrapper #panel-15 .circle,
+.supplemental-wrapper #panel-22 .circle,
+.supplemental-wrapper #panel-29 .circle {
+  background: #009b3e;
+}
+.supplemental-wrapper #panel-2 .book-content .content-header a,
+.supplemental-wrapper #panel-9 .book-content .content-header a,
+.supplemental-wrapper #panel-16 .book-content .content-header a,
+.supplemental-wrapper #panel-23 .book-content .content-header a {
+  color: #979fa4;
+}
+.supplemental-wrapper .opened-panel-2,
+.supplemental-wrapper .opened-panel-9,
+.supplemental-wrapper .opened-panel-16,
+.supplemental-wrapper .opened-panel-23 {
+  border: 3px solid #979fa4;
+}
+.supplemental-wrapper #panel-2 .title,
+.supplemental-wrapper #panel-9 .title,
+.supplemental-wrapper #panel-16 .title,
+.supplemental-wrapper #panel-23 .title {
+  border-top: 5px solid #979fa4;
+}
+.supplemental-wrapper .opened-panel-2 .title,
+.supplemental-wrapper .opened-panel-9 .title,
+.supplemental-wrapper .opened-panel-16 .title,
+.supplemental-wrapper .opened-panel-23 .title {
+  border-top: none !important;
+}
+.supplemental-wrapper #panel-2 .circle,
+.supplemental-wrapper #panel-9 .circle,
+.supplemental-wrapper #panel-16 .circle,
+.supplemental-wrapper #panel-23 .circle {
+  background: #979fa4;
+}
+.supplemental-wrapper #panel-3 .book-content .content-header a,
+.supplemental-wrapper #panel-10 .book-content .content-header a,
+.supplemental-wrapper #panel-17 .book-content .content-header a,
+.supplemental-wrapper #panel-24 .book-content .content-header a {
+  color: #c40148;
+}
+.supplemental-wrapper .opened-panel-3,
+.supplemental-wrapper .opened-panel-10,
+.supplemental-wrapper .opened-panel-17,
+.supplemental-wrapper .opened-panel-24 {
+  border: 3px solid #c40148;
+}
+.supplemental-wrapper #panel-3 .title,
+.supplemental-wrapper #panel-10 .title,
+.supplemental-wrapper #panel-17 .title,
+.supplemental-wrapper #panel-24 .title {
+  border-top: 5px solid #c40148;
+}
+.supplemental-wrapper .opened-panel-3 .title,
+.supplemental-wrapper .opened-panel-10 .title,
+.supplemental-wrapper .opened-panel-17 .title,
+.supplemental-wrapper .opened-panel-24 .title {
+  border-top: none !important;
+}
+.supplemental-wrapper #panel-3 .circle,
+.supplemental-wrapper #panel-10 .circle,
+.supplemental-wrapper #panel-17 .circle,
+.supplemental-wrapper #panel-24 .circle {
+  background: #c40148;
+}
+.supplemental-wrapper #panel-4 .book-content .content-header a,
+.supplemental-wrapper #panel-11 .book-content .content-header a,
+.supplemental-wrapper #panel-18 .book-content .content-header a,
+.supplemental-wrapper #panel-25 .book-content .content-header a {
+  color: #59aa47;
+}
+.supplemental-wrapper .opened-panel-4,
+.supplemental-wrapper .opened-panel-11,
+.supplemental-wrapper .opened-panel-18,
+.supplemental-wrapper .opened-panel-25 {
+  border: 3px solid #59aa47;
+}
+.supplemental-wrapper .panel-4 .title,
+.supplemental-wrapper .panel-11 .title,
+.supplemental-wrapper .panel-18 .title,
+.supplemental-wrapper .panel-25 .title {
+  border-top: 5px solid #59aa47;
+}
+.supplemental-wrapper .opened-panel-4 .title,
+.supplemental-wrapper .opened-panel-11 .title,
+.supplemental-wrapper .opened-panel-18 .title,
+.supplemental-wrapper .opened-panel-25 .title {
+  border-top: none !important;
+}
+.supplemental-wrapper #panel-4 .circle,
+.supplemental-wrapper #panel-11 .circle,
+.supplemental-wrapper #panel-18 .circle,
+.supplemental-wrapper #panel-25 .circle {
+  background: #59aa47;
+}
+.supplemental-wrapper #panel-5 .book-content .content-header a,
+.supplemental-wrapper #panel-12 .book-content .content-header a,
+.supplemental-wrapper #panel-19 .book-content .content-header a,
+.supplemental-wrapper #panel-1277 .book-content .content-header a {
+  color: #2fb4e9;
+}
+.supplemental-wrapper .opened-panel-5,
+.supplemental-wrapper .opened-panel-12,
+.supplemental-wrapper .opened-panel-19,
+.supplemental-wrapper .opened-panel-26 {
+  border: 3px solid #2fb4e9;
+}
+.supplemental-wrapper .panel-5 .title,
+.supplemental-wrapper .panel-12 .title,
+.supplemental-wrapper .panel-19 .title,
+.supplemental-wrapper .panel-26 .title {
+  border-top: 5px solid #2fb4e9;
+}
+.supplemental-wrapper .opened-panel-5 .title,
+.supplemental-wrapper .opened-panel-12 .title,
+.supplemental-wrapper .opened-panel-19 .title,
+.supplemental-wrapper .opened-panel-26 .title {
+  border-top: none !important;
+}
+.supplemental-wrapper #panel-5 .circle,
+.supplemental-wrapper #panel-12 .circle,
+.supplemental-wrapper #panel-19 .circle,
+.supplemental-wrapper #panel-26 .circle {
+  background: #2fb4e9;
+}
+.supplemental-wrapper #panel-6 .book-content .content-header a,
+.supplemental-wrapper #panel-13 .book-content .content-header a,
+.supplemental-wrapper #panel-20 .book-content .content-header a,
+.supplemental-wrapper #panel-27 .book-content .content-header a {
+  color: #87d200;
+}
+.supplemental-wrapper .opened-panel-6,
+.supplemental-wrapper .opened-panel-13,
+.supplemental-wrapper .opened-panel-20,
+.supplemental-wrapper .opened-panel-27 {
+  border: 3px solid #87d200;
+}
+.supplemental-wrapper .panel-6 .title,
+.supplemental-wrapper .panel-13 .title,
+.supplemental-wrapper .panel-20 .title,
+.supplemental-wrapper .panel-27 .title {
+  border-top: 5px solid #87d200;
+}
+.supplemental-wrapper .opened-panel-6 .title,
+.supplemental-wrapper .opened-panel-13 .title,
+.supplemental-wrapper .opened-panel-20 .title,
+.supplemental-wrapper .opened-panel-27 .title {
+  border-top: none;
+}
+.supplemental-wrapper #panel-6 .circle,
+.supplemental-wrapper #panel-13 .circle,
+.supplemental-wrapper #panel-20 .circle,
+.supplemental-wrapper #panel-27 .circle {
+  background: #87d200;
+}
+.supplemental-wrapper #panel-7 .book-content .content-header a,
+.supplemental-wrapper #panel-14 .book-content .content-header a,
+.supplemental-wrapper #panel-21 .book-content .content-header a,
+.supplemental-wrapper #panel-28 .book-content .content-header a {
+  color: #f7941e;
+}
+.supplemental-wrapper .opened-panel-7,
+.supplemental-wrapper .opened-panel-14,
+.supplemental-wrapper .opened-panel-21,
+.supplemental-wrapper .opened-panel-28 {
+  border: 3px solid #f7941e;
+}
+.supplemental-wrapper .panel-7 .title,
+.supplemental-wrapper .panel-14 .title,
+.supplemental-wrapper .panel-21 .title,
+.supplemental-wrapper .panel-28 .title {
+  border-top: 5px solid #f7941e;
+}
+.supplemental-wrapper .opened-panel-7 .title,
+.supplemental-wrapper .opened-panel-14 .title,
+.supplemental-wrapper .opened-panel-21 .title,
+.supplemental-wrapper .opened-panel-28 .title {
+  border-top: none;
+}
+.supplemental-wrapper #panel-7 .circle,
+.supplemental-wrapper #panel-14 .circle,
+.supplemental-wrapper #panel-21 .circle,
+.supplemental-wrapper #panel-28 .circle {
+  background: #f7941e;
+}
+.panel {
+  webkit-border-top-left-radius: 15px;
+  -moz-border-radius-topleft: 15px;
+  border-top-left-radius: 15px;
+  webkit-border-top-right-radius: 15px;
+  -moz-border-radius-topright: 15px;
+  border-top-right-radius: 15px;
+  webkit-border-bottom-left-radius: 0px;
+  -moz-border-radius-bottomleft: 0px;
+  border-bottom-left-radius: 0px;
+  webkit-border-bottom-right-radius: 0px;
+  -moz-border-radius-bottomright: 0px;
+  border-bottom-right-radius: 0px;
+  width: 310px;
+  margin-bottom: 10px;
+}
+.panel hr {
+  margin: 0 20px 0 90px;
+}
+.panel ul,
+.panel ul li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.panel .book-title {
+  border-top: 5px solid #ff0000;
+  position: relative;
+  height: 50px;
+  width: 215px;
+  width: 70%;
+  overflow: hidden;
+  padding: 10px 20px 10px 10px;
+  margin: 0 10px 0 0;
+  font-size: 14px;
+  line-height: 12px;
+  font-weight: bold;
+  color: #000;
+}
+.book-title a:hover,
+.book-title a {
+  text-decoration: none;
+  color: #000;
+}
+.title-wrapper {
+  position: relative;
+}
+.title-wrapper .badge {
+  position: absolute;
+}
+.book-top-content {
+  position: relative;
+  height: 107px;
+  clear: both;
+  display: block;
+}
+.book-intro {
+  height: 40px;
+  width: 210px;
+  line-height: 13px;
+  overflow: hidden;
+  text-decoration: none;
+  color: #989898;
+  margin: 20px 0 0 0;
+  padding: 0 0 0 10px;
+}
+.panel .book-files {
+  overflow: hidden;
+}
+.book-files hr {
+  width: 210px;
+  margin-top: 0;
+  margin-bottom: 10px;
+  margin-left: 10px;
+}
+hr {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+.panel ul.book-files {
+  float: none;
+}
+.panel ul.book-files li {
+  float: left;
+}
+.panel .book-content {
+  clear: both;
+  padding: 10px;
+  overflow: hidden;
+}
+.book-content-wrapper .panel-body {
+  padding: 0;
+}
+.panel .book-content li {
+  margin: 0 0 1em 0;
+}
+.panel .book-content .subtitle {
+  color: #313131;
+  font-style: italic;
+}
+.panel .book-content .content-header a {
+  font-weight: bold;
+  margin: 10px 0 0 0;
+  color: #ff0000;
+}
+.panel .book-files .pdf-view,
+.panel .book-files .flip-book {
+  display: inline-block;
+  width: 98px;
+  margin-left: 5px;
+}
+.panel .book-files .description {
+  width: 50px;
+  line-height: 12px;
+  color: #000;
+  text-align: center;
+  font-style: italic;
+  font-size: 10px;
+}
+.book-content-wrapper {
+  display: none;
+}
+.panel .book-files .description:hover {
+  text-decoration: underline;
+}
+.panel .book-files .pdf-view .icon,
+.panel .book-files .flip-book .icon {
+  background: url('/assets/sprite-book.png') no-repeat 0 0;
+  height: 30px;
+  overflow: hidden;
+  display: block;
+}
+.panel .book-files .pdf-view .icon {
+  width: 30px;
+  background-position: 0 0;
+}
+.panel .book-files .flip-book .icon {
+  width: 35px;
+  background-position: -28px -3px;
+}
+.panel .related-content {
+  line-height: 13px;
+  font-style: italic;
+  overflow: hidden;
+  color: #989898;
+  margin: 20px 0 0 0;
+  border-top: 1px solid #989898;
+}
+.img_thumb img {
+  webkit-border-top-left-radius: 12px;
+  -moz-border-radius-topleft: 12px;
+  border-top-left-radius: 12px;
+  margin: 0;
+  height: 107px;
+  width: 79px;
+}
+@media (min-width: 1024px) {
+  
+}
+@media (max-width: 640px) and (min-width: 480px) {
+  .img_thumb img {
+    width: 60px;
+  }
+  .panel .book-title {
+    width: 215px;
+  }
+  .panel {
+    width: 290px;
+  }
+}
+@media (max-width: 768px) {
+  .books-wrapper {
+    width: 637px;
+    margin: 0 auto;
+    clear: both;
+  }
+}
+@media (max-width: 480px) {
+  .img_thumb img {
+    width: 79px;
+  }
+  .panel .book-title {
+    width: 225px;
+  }
+  .panel {
+    width: 100%;
+  }
+  .books-wrapper {
+    margin: 0 auto;
+    width: 320px;
+  }
+}

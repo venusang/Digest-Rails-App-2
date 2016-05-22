@@ -1,0 +1,25 @@
+.row
+  .col-sm-3.col-md-3.hidden-xs
+    %img.img-responsive{src: image_path('logo.png')}
+  .col-md-9
+    .hidden-sm.hidden-md.hidden-lg
+      %ul.list-inline
+        %li
+          %a{href: "http://www.schneider-electric.us/sites/us/en/support/distributor-locator/distributor-locator.page", target: "_blank", class: "external_link", title: "Locate a Distributor", link_type: "external-html" }
+            %small Locate a Distributor
+        %li
+          %a{href: "http://www.schneider-electric.us/sites/us/en/support/sales-offices/sales-offices.page", target: "_blank", class: "external_link", title: "Find a Sales Office", link_type: "external-html"}
+            %small Find a Sales Office
+        %li
+          %a{href: "http://www.schneider-electric.us/sites/us/en/support/support.page", target: "_blank", class: "external_link", title: "Customer Support Center", link_type: "external-html"}
+            %small Customer Support Center
+    .hidden-xs
+      %ul.header-secondary-nav.list-inline.text-right
+        %li
+          %a{href: "http://www.schneider-electric.us/sites/us/en/support/distributor-locator/distributor-locator.page", target: "_blank", class: "external_link", title: "Locate a Distributor", link_type: "external-html" } Locate a Distributor
+          %span.text-muted= '|'
+        %li
+          %a{href: "http://www.schneider-electric.us/sites/us/en/support/sales-offices/sales-offices.page", target: "_blank", class: "external_link", title: "Find a Sales Office", link_type: "external-html"} Find a Sales Office
+          %span.text-muted= '|'
+        %li
+          %a{href: "http://www.schneider-electric.us/sites/us/en/support/support.page", target: "_blank", class: "external_link", title: "Customer Support Center", link_type: "external-html"} Customer Support Center

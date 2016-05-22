@@ -1,0 +1,6 @@
+.hidden-xs.carousel.slide{data: {ride: 'carousel', interval: 8000}}
+  / Wrapper for slides
+  .carousel-inner
+    - carousel.each do |img|
+      .item{class: carousel.first.eql?(img) ? 'active' : ''}
+        = image_tag img.image_url

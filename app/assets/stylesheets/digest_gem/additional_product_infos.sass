@@ -1,0 +1,89 @@
+.additional-product-info .left-menu a
+  color: #fff
+
+.results
+  border-bottom-style: solid
+  border-bottom-color: $dark-gray
+
+.result_section
+  display: none
+
+#trips[disabled]
+  -moz-opacity: 0.30
+  opacity: .30
+  filter: alpha(opacity = 30)
+
+.products a
+  color: $spruce-green
+
+.a_product
+  margin-bottom: 7px
+  &.active
+    background-color: $spruce-green
+    a
+      color: white
+
+.modal_ptitle
+  text-decoration: underline
+  color: $spruce-green
+
+#pmodal
+  color: white
+  background-color: $spruce-green
+
+.modal-backdrop
+  filter: alpha(opacity = 20)
+  -khtml-opacity: 0.2
+  -moz-opacity: 0.2
+  opacity: 0.2
+  &.fade.in
+    filter: alpha(opacity = 20)
+    -khtml-opacity: 0.2
+    -moz-opacity: 0.2
+    opacity: 0.2
+
+.doc_title
+  color: $spruce-green
+  text-align: left
+
+.doc_body
+  color: $dark-gray
+  text-align: left
+
+.doc_date, .doc_type, .doc_size
+  color: $spruce-green
+  text-align: left
+  font-size: 12px
+
+.ap_menu
+  margin-top: 16px
+
+.list-group-item
+  background-color: black
+  color: white
+
+.info_txt
+  color: $dark-gray
+
+a.list-group-item
+  &:hover
+    background-color: black
+    color: $spruce-green
+  &.active
+    &:hover
+      color: $spruce-green
+      background-color: black
+      border-color: white
+    color: $spruce-green !important
+    background-color: black !important
+    border-color: white !important
+    &:after
+      content: ""
+      border-color: transparent $spruce-green
+      border-style: solid
+      border-width: 0.55em 0 0.55em 0.65em
+      display: inline-block
+      left: 1em
+      top: 0.2em
+      position: relative
+  color: white

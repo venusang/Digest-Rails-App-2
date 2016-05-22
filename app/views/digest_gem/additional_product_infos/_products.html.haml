@@ -1,0 +1,46 @@
+- unless @data.empty?
+  -for product in @data
+    .col-md-12.a_product
+      -if product.link_type == "pdf"
+        %a.result_link{href:"#", data: {target: "#myModal#{product.id}", toggle: "modal"}}
+          =product.title
+      -else
+        %a.result_link{href:product.url, target: "_blank"}
+          =product.title
+    .modal.fade{id: "myModal#{product.id}"}
+      .modal-dialog
+        .modal-content
+          .modal-header
+            %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", type: "button"} x
+            .modal-title.doc_title
+              %h5
+                =product.title
+          -if !product.short_desc.nil?
+            .modal-body.doc_body
+              -if product.short_desc.nil?
+                Description currently unavailable
+              -else
+                =product.short_desc
+          .modal-footer
+            .pull-left
+              .doc_date
+                Document Date:
+                %span.info_txt= product.published_on.strftime("%B %e, %Y") if product.published_on
+              .doc_type
+                Document Type:
+                %span.info_txt= product.document_type if product.document_type
+              .doc_size
+                Document Size:
+                %span.info_txt= product.document_size if product.document_size
+            -if product.link_type
+              %a.btn.btn-primary{id: "pmodal", type: "button", url: product.url, title: product.title, link_type: product.link_type} Preview
+            -else
+              %a.btn.btn-primary{id: "pmodal", type: "button", url: product.url, title: product.title} Preview
+        / /.modal-content
+      / /.modal-dialog
+    / /.modal
+
+
+-else
+  .alert
+    %h4 No results

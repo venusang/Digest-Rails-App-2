@@ -1,0 +1,128 @@
+= render partial: 'layouts/digest_gem/tab_nav', locals: {active: 'search'}
+
+- unless @results.empty?
+  .row
+    %h2
+      ="Search Results for '#{@term}'"
+    -if @sections.include?('Full Digest')
+      .col-md-12.search-header
+        %h5.col-md-10.search-title
+          ="Full Digest (#{ @results.select{|x| x.document_type == 'Full Digest'}.count})"
+        .col-md-2.text-right.close_btn
+          %button.btn.btn-link{data:{toggle: 'collapse', target:"#full_digest"}}
+            %i.fa.fa-minus
+      .result_cont.collapse.in#full_digest
+      -for result in @results.select{|x| x.document_type == 'Full Digest'}
+        .result.col-md-12
+          .col-md-4
+            .col-md-2
+              -if result.link_type == 'pdf'
+                =link_to (image_tag("icon-20x20-pdf.png")), result.link_url, target: '_blank', class: "external_link", title: result.name, link_type: "external-pdf"
+              -else
+                =link_to '', result.link_url, class: 'fa fa-external-link', target: '_blank', class: "external_link", title: result.name, link_type: "external-html"
+            .col-md-10
+              .result_name
+                =link_to result.name, result.link_url, target: '_blank', class: "external_link", title: result.name, link_type: "external-#{result.link_type}"
+              =result.document_size if result.document_size
+              %br
+              =result.published_on if result.published_on
+          .col-md-8.search-desc
+            =result.short_desc
+
+    -if @sections.include?('Digest Section')
+      .col-md-12.header.search-header
+        %h5.col-md-10.col-xs-10.search-title
+          ="Digest Section (#{ @results.select{|x| x.document_type == 'Digest Section'}.count})"
+        .col-md-2.col-xs-2.text-right.close_btn
+          %button.btn.btn-link{data:{toggle: 'collapse', target:"#digest_section"}}
+            %i.fa.fa-minus
+      .result_cont.collapse.in#digest_section
+        -for result in @results.select{|x| x.document_type == 'Digest Section'}
+          .result.col-md-12
+            .col-md-4
+              .col-md-2
+                -if result.link_type == 'pdf'
+                  =link_to (image_tag("icon-20x20-pdf.png")), result.link_url, target: '_blank', class: "external_link", title: result.name, link_type: "external-pdf"
+                -else
+                  =link_to '', result.link_url, class: 'fa fa-external-link', target: '_blank', class: "external_link", title: result.name, link_type: "external-html"
+              .col-md-10
+                .result_name
+                  =link_to result.name, result.link_url, target: '_blank', class: "external_link", title: result.name, link_type: "external-#{result.link_type}"
+                =result.document_size if result.document_size
+                %br
+                =result.published_on if result.published_on
+            .col-md-8.search-desc
+              =result.short_desc
+    -if @sections.include?('Supplemental Digest Section')
+      .col-md-12.header.search-header
+        %h5.col-md-10.search-title
+          ="Supplemental Digest Section (#{ @results.select{|x| x.document_type == 'Supplemental Digest Section'}.count})"
+        .col-md-2.text-right.close_btn
+          %button.btn.btn-link{data:{toggle: 'collapse', target:"#supplemental_digest_section"}}
+            %i.fa.fa-minus
+      .result_cont.collapse.in#supplemental_digest_section
+        -for result in @results.select{|x| x.document_type == 'Supplemental Digest Section'}
+          .result.col-md-12
+            .col-md-4
+              .col-md-2
+                -if result.link_type == 'pdf'
+                  =link_to (image_tag("icon-20x20-pdf.png")), result.link_url, target: '_blank', class: "external_link", title: result.name, link_type: "external-pdf"
+                -else
+                  =link_to '',result.link_url, class: 'fa fa-external-link', target: '_blank', class: "external_link", title: result.name, link_type: "external-html"
+              .col-md-10
+                .result_name
+                  =link_to result.name, result.link_url, target: '_blank', class: "external_link", title: result.name, link_type: "external-#{result.link_type}"
+                =result.document_size if result.document_size
+                =result.published_on if result.published_on
+            .col-md-8
+              =result.short_desc
+    -if @sections.include?('Related Content')
+      .col-md-12.header.search-header
+        %h5.col-md-10.col-xs-10.search-title
+          ="Related Content (#{ @results.select{|x| x.document_type == 'Related Content'}.count})"
+        .col-md-2.col-xs-2.text-right.close_btn
+          %button.btn.btn-link{data:{toggle: 'collapse', target:"#related_content"}}
+            %i.fa.fa-minus
+      .result_cont.collapse.in#related_content
+        -for result in @results.select{|x| x.document_type == 'Related Content'}
+          .result.col-md-12
+            .col-md-4
+              .col-md-2
+                -if result.link_type == 'pdf'
+                  =link_to (image_tag("icon-20x20-pdf.png")), result.link_url, target: '_blank', class: "external_link", title: result.name, link_type: "external-pdf"
+                -else
+                  =link_to '', result.link_url, class: 'fa fa-external-link', target: '_blank', class: "external_link", title: result.name, link_type: "external-html"
+              .col-md-10
+                .result_name
+                  =link_to result.name, result.link_url, target: "_blank", class: "external_link", title: result.name, link_type: "external-#{result.link_type}"
+                =result.document_size if result.document_size
+                =result.published_on if result.published_on
+            .col-md-8.search-desc
+              =result.short_desc
+    -for section in @sections.delete_if{|x| x == 'Related Content' || x == 'Supplemental Digest Section' || x == 'Digest Section'}
+      .col-md-12.search-header.header
+        %h5.col-md-10.col-xs-10.search-title
+          ="#{section} (#{ @results.select{|x| x.document_type == section}.count})"
+        .col-md-2.col-xs-2.text-right.close_btn
+          %button.btn.btn-link{data:{toggle: 'collapse', target:"##{section.parameterize.underscore}"}}
+            %i.fa.fa-minus
+      .result_cont.collapse.in{id: section.parameterize.underscore}
+        -for result in @results.select{|x| x.document_type == section}
+          .result.col-md-12
+            .col-md-4
+              .col-md-2
+                -if result.link_type == 'pdf'
+                  =link_to (image_tag("icon-20x20-pdf.png")), result.link_url, target: '_blank', class: "external_link", title: result.name, link_type: "external-pdf"
+                -else
+                  =link_to '', result.link_url, class: 'fa fa-external-link', target: '_blank', class: "external_link", title: result.name, link_type: "external-html"
+              .col-md-10
+                .result_name
+                  =link_to result.name, result.link_url, target: "_blank", class: "external_link", title: result.name, link_type: "external-#{result.link_type}"
+                =result.document_size if result.document_size
+                %br
+                =result.published_on if result.published_on
+            .col-md-8.search-desc
+              =result.short_desc
+-else
+  .alert
+    %h4 No results

@@ -1,0 +1,19 @@
+= render partial: 'layouts/digest_gem/tab_nav', locals: {active: 'supplemental_digest'}
+
+-# extra small
+.hidden-sm.hidden-md.hidden-lg
+  - @books.each do |book|
+    = render partial: 'digest_gem/books/book', locals: {book: book, image_type: 'supplemental', split_section_on: 'Supp '}
+
+-# small, medium and large screen
+.hidden-xs
+  .row
+    - rotate_in_groups(@books, 3).each do |group|
+      .col-sm-4.col-md-4
+        - group.each do |book|
+          - if book
+            = render partial: 'digest_gem/books/book', locals: {book: book, image_type: 'supplemental', split_section_on: 'Supp '}
+
+-# related content modals
+- @books.each do |book|
+  = render partial: 'digest_gem/books/related_content', locals: {book: book, image_type: 'supplemental', split_section_on: 'Supp '}

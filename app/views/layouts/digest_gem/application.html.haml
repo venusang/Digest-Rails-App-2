@@ -1,0 +1,28 @@
+!!!
+%html
+  %head
+    %meta{name: 'viewport', content: 'width=device-width, initial-scale=1.0'}
+    %meta{'http-equiv' => 'X-UA-Compatible', content: 'IE=edge'}
+    %meta{name: 'apple-itunes-app', content:"app-id=#{current::Setting.first.ios_app_id}"}
+    %title Digest
+    = stylesheet_link_tag 'digest_gem/application', media: 'all'
+    = stylesheet_link_tag 'http://fonts.googleapis.com/css?family=PT+Sans', media: 'all'
+    /[if IE 8]
+      = stylesheet_link_tag 'digest_gem/ie8', media: 'all'
+    = javascript_include_tag 'digest_gem/application'
+    = csrf_meta_tags
+  %body
+    .container
+      .header
+        = render partial: 'layouts/digest_gem/header'
+    .container
+      = render partial: 'layouts/digest_gem/carousel', locals: {carousel: carousel}
+      = yield :nav
+      .hidden-lg
+        .clearfix= render partial: 'layouts/digest_gem/search_form'
+        %hr
+    .container
+      .row
+        .col-md-9= yield
+        .col-md-3
+          .sidebar= render partial: 'layouts/digest_gem/sidebar'

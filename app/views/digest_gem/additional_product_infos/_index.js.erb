@@ -1,0 +1,8 @@
+<% if @show %>
+    $(".products").empty().html("<%= escape_javascript(render :partial => 'products' ) %>");
+    $('.result_section').show();
+<%end%>
+<%if @secondary_list%>
+    $(".secondary").empty().html("<%= escape_javascript(render :partial => 'dropdown' ) %>");
+
+<%end%>
