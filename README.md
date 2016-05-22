@@ -7,4 +7,4 @@ Technologies included:
 - Ruby on Rails
 - Coffee Script
 - HAML
-- LESS
+- SASS
